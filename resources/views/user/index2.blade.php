@@ -1,5 +1,6 @@
 @extends('user.user_dashboard')
 @section('user')
+<div class="content-body">
 <div class="container-fluid">
     <nav class="page-breadcrumb">
         <ol class="breadcrumb">
@@ -47,6 +48,7 @@
         </div>
     </div>
 
+</div>
 </div>
 
 @endsection

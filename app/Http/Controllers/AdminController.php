@@ -27,7 +27,7 @@ class AdminController extends Controller
         return view('admin.admin_login');
     }
 
-    public function AdminProfile2()
+    public function AdminProfile()
     {
         $id = Auth::user()->id;
         $profileData = User::find($id);
