@@ -82,5 +82,3 @@ Route::get('/admin/login', [AdminController::class, 'AdminLogin'])->name('admin.
     
  
     }); //end Group admin midelwew
-
-
