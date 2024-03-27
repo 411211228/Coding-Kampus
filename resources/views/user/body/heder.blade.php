@@ -178,12 +178,18 @@
                             </div>
                         </div>
                     </li>
+
+
+                    @php
+                    $id = Auth :: user()->id;
+                    $profileData =  App\Models\User::find($id);
+                        @endphp
                     <li class="nav-item dropdown header-profile">
                         <a class="nav-link" href="#" role="button" data-toggle="dropdown">
                             <img class="wd-30 ht-30 rounded-circle" src="{{ (!empty($profileData->photo)) ? url('upload/admin_images/'.$profileData->photo) : url('upload/no_image.JPG') }}" alt="profile">
                             <div class="header-info">
-                                <span>Johndoe</span>
-                                <small>Super Admin</small>
+                                <span>{{$profileData->name}}</span>
+                                <small>{{$profileData->email}}</small>
                             </div>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">

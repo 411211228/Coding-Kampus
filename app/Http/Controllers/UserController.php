@@ -3,14 +3,20 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Http\Request;
+use App\Models\PropertyType;
 use App\Models\User;
 
-use Illuminate\Http\Request;
+
 
 class UserController extends Controller
 {
+
+   
     public function UserDashboard(){
-        return view('user.index2');
+        $types = PropertyType::latest()->get();
+        // return view("backend.type.all_type",compact("types"));
+       return view('user.index2',  compact("types"));                                                                                                 
     }
 
     public function UserLogout(Request $request)
@@ -21,7 +27,7 @@ class UserController extends Controller
         return redirect('/admin/login');
     }
 
-    public function UserProfile()
+    public function UserProfile2()
     {
         $id = Auth::user()->id;
         $profileData = User::find($id);
